@@ -19,6 +19,18 @@ public class ReverseString{
         }
         return new String(ch);
     }
+    // Optimized Solution
+    /*
+    public static String ReverseWord(String str){
+        char ch; 
+        String nstr = "";
+        for(int i = str.length() - 1; i >= 0; i--){
+            ch = str.charAt(i);
+            nstr += ch;
+        }
+        return nstr;
+    }
+    */
     public static void main(String[] args) {
         String str = "Geeks";
         System.out.println(ReverseWord(str));
