@@ -3,7 +3,7 @@
 //         s = Geeks
 //         Output: skeeG
 
-// package Strings;
+package Strings;
 
 public class ReverseString{
     public static String ReverseWord(String str){
