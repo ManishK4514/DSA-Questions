@@ -12,6 +12,23 @@ public class Duplicate {
     Solution - 01: 
     public static int findDuplicate(int[] nums){
         for (int i = 0; i < nums.length - 1; i++) {
+            for(int j = i + 1; j < nums.length; j++){
+                if(nums[i] == nums[i + 1]){
+                return nums[i];
+              }
+            }
+        }
+        return 0;
+    }
+    Note: This is not the optimal solution
+    because time complexity = O(N * N), Space complexity: O(1)
+    */
+
+    /* 
+    Solution - 02: 
+    public static int findDuplicate(int[] nums){
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length - 1; i++){
             if(nums[i] == nums[i + 1]){
                 return nums[i];
             }
@@ -24,7 +41,7 @@ public class Duplicate {
 
 
     /*
-    Solution - 02 
+    Solution - 03 
     public static int findDuplicate(int[] nums){
         int n = nums.length;
         int freq[] = new int[n + 1];
