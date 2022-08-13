@@ -17,13 +17,8 @@ public class Minimum_Sum_of_Absolute_Differences_of_Pairs {
         Arrays.sort(A);
         Arrays.sort(B);
         long sum = 0;
-        int temp = 0;
         for(int i = 0; i < N; i++){
-            temp = A[i] - B[i];
-            if(temp < 0){
-                temp = -1 * temp;
-            }
-            sum += temp;
+            sum += Math.abs(A[i] - B[i]);
         }
         return sum;
     }
