@@ -7,7 +7,7 @@ public class BinarySearch {
         int upper = nums.length;
         int mid = 0;
         while(lower <= upper){
-            mid = (lower + upper)/2;
+            mid = lower + (Upper - lower)/2;
             if(nums[mid] == target){
                 System.out.println("Element found at location: " + mid);
                 break;
