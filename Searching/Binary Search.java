@@ -3,20 +3,20 @@
 public class BinarySearch {
     public static void binarySearch(int[] nums, int target){
         // Arrays.sort(nums);
-        int lower = 0;
-        int upper = nums.length;
+        int start = 0;
+        int end = nums.length;
         int mid = 0;
-        while(lower <= upper){
-            mid = lower + (Upper - lower)/2;
+        while(start <= end){
+            mid = start + (end - start)/2;
             if(nums[mid] == target){
                 System.out.println("Element found at location: " + mid);
                 break;
             }
             else if(nums[mid] > target){
-                upper = mid - 1;
+                end = mid - 1;
             }
             else{
-                lower = mid + 1;
+                start = mid + 1;
             }
         }
     }
