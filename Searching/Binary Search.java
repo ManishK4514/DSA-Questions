@@ -12,11 +12,11 @@ public class BinarySearch {
                 System.out.println("Element found at location: " + mid);
                 break;
             }
-            else if(nums[mid] < target){
-                lower = mid + 1;
+            else if(nums[mid] > target){
+                upper = mid - 1;
             }
             else{
-                upper = mid - 1;
+                lower = mid + 1;
             }
         }
     }
