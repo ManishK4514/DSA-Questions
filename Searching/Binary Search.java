@@ -4,7 +4,7 @@ public class BinarySearch {
     public static void binarySearch(int[] nums, int target){
         // Arrays.sort(nums);
         int start = 0;
-        int end = nums.length;
+        int end = nums.length - 1;
         int mid = 0;
         while(start <= end){
             mid = start + (end - start)/2;
