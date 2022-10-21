@@ -60,7 +60,7 @@ public class Majority_Element {
     }
     public static int maximalRectangle(int[][] matrix) {
         int height[] = new int[matrix[0].length];
-        for(int j = 0; j < matrix.length; j++){
+        for(int j = 0; j < matrix[0].length; j++){
             height[j] = matrix[0][j];
         }
         int max = Integer.MIN_VALUE;
