@@ -1,3 +1,30 @@
+/*
+ * Max Sum Subarray of size K
+   BasicAccuracy: 52.08%Submissions: 45278Points: 1
+   Given an array of integers Arr of size N and a number K. Return the maximum sum of a subarray of size K.
+   
+   Example 1:
+   
+   Input:
+   N = 4, K = 2
+   Arr = [100, 200, 300, 400]
+   Output:
+   700
+   Explanation:
+   Arr3  + Arr4 =700,which is maximum.
+    
+   
+   Example 2:
+   
+   Input:
+   N = 4, K = 4
+   Arr = [100, 200, 300, 400]
+   Output:
+   1000
+   Explanation: Arr1 + Arr2 + Arr3 + Arr4 =1000,which is maximum.
+*/
+
+
 public class Maximum_Sum_Subarray_of_size_K {
     public static int maximumSum(int[] arr, int k){
         /*
@@ -16,20 +43,23 @@ public class Maximum_Sum_Subarray_of_size_K {
         */
 
         // Optimized Approach: Using Sliding Windows
-        int i = 0, j = 0, sum = 0, max = Integer.MIN_VALUE;
-        while(j <= arr.length){
-            while(j < k){
-                sum += arr[j];
-                j++;
-            }
-            if(j > k){
-                sum += arr[j - 1];
-                sum -= arr[i - 1];
-            }
-            max = Math.max(max, sum);
-            i++; j++;
+        if (arr.length < k){
+           System.out.println("Invalid");
+           return -1;
         }
-        return max;
+      
+        // Compute sum of first window of size k
+        int res = 0;
+        for (int i=0; i<k; i++){
+           res += arr[i];
+        }   
+        int currSum = res;
+        for (int i=k; i<arr.length; i++){
+           currSum += arr[i] - arr[i-k];
+           res = Math.max(res, currSum);
+        }
+      
+        return res;
     }
     public static void main(String[] args) {
         int[] arr = {2, 5, 1, 8, 2, 9, 1};
